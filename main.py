@@ -183,7 +183,7 @@ def modifier_utilisateur(request:Request,modifier:Utilisateur):
     return {"resultat":"modifications ajoutées"}
 
 #fonction pour envoyer les commandes
-@app.post("/ensemble_des_commandes")
+@app.get("/ensemble_des_commandes")
 def envoie_des_commandes():
     resultat=supabase.table("commande").select("*").execute()
     if resultat.data==[]:
