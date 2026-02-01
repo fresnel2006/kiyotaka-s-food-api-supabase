@@ -185,7 +185,7 @@ def modifier_utilisateur(request:Request,modifier:Utilisateur):
 #fonction pour envoyer les commandes
 @app.get("/ensemble_des_commandes")
 def envoie_des_commandes():
-    resultat=supabase.table("utilisateurs").select("*").execute()
+    resultat=supabase.table("commande").select("*").execute()
     if resultat.data==[]:
         return {"resultat":"existe pas"}
     else:
